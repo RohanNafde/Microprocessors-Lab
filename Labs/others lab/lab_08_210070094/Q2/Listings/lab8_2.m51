@@ -1,0 +1,133 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    03/09/2023  14:28:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\lab8_2.obj TO .\Objects\lab8_2 PRINT (.\Listings\lab8_2.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\lab8_2.obj (LAB8_2)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\lab8_2 (LAB8_2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     000DH                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+                    001EH     07E2H                  *** GAP ***
+            CODE    0800H     001BH     UNIT         ?PR?MAIN?LAB8_2
+            CODE    081BH     000DH     UNIT         ?PR?TIMER0_ISR?LAB8_2
+            CODE    0828H     000DH     UNIT         ?PR?TIMER1_ISR?LAB8_2
+            CODE    0835H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\lab8_2 (LAB8_2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LAB8_2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\lab8_2 (LAB8_2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LAB8_2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/09/2023  14:28:38  PAGE 2
+
+
+  D:00C0H         PUBLIC        P4
+  C:081BH         PUBLIC        timer0_isr
+  C:0828H         PUBLIC        timer1_isr
+  B:00A8H.7       PUBLIC        EA
+  B:00B0H.6       PUBLIC        LED1
+  B:00B0H.7       PUBLIC        LED2
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IPL0
+  D:00D8H         PUBLIC        CCON
+  C:0800H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  B:0088H.5       PUBLIC        TF0
+  B:0088H.7       PUBLIC        TF1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  B:0088H.4       PUBLIC        TR0
+  D:00F8H         PUBLIC        UEPINT
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  -------         PROC          TIMER0_ISR
+  C:081BH         LINE#         16
+  C:081BH         LINE#         18
+  C:081DH         LINE#         20
+  C:0820H         LINE#         21
+  C:0823H         LINE#         22
+  C:0825H         LINE#         23
+  C:0827H         LINE#         24
+  -------         ENDPROC       TIMER0_ISR
+  -------         PROC          TIMER1_ISR
+  C:0828H         LINE#         26
+  C:0828H         LINE#         28
+  C:082AH         LINE#         30
+  C:082DH         LINE#         31
+  C:0830H         LINE#         32
+  C:0832H         LINE#         33
+  C:0834H         LINE#         34
+  -------         ENDPROC       TIMER1_ISR
+  -------         PROC          MAIN
+  C:0800H         LINE#         37
+  C:0800H         LINE#         38
+  C:0800H         LINE#         39
+  C:0803H         LINE#         40
+  C:0806H         LINE#         41
+  C:0809H         LINE#         42
+  C:080CH         LINE#         43
+  C:080FH         LINE#         44
+  C:0811H         LINE#         45
+  C:0813H         LINE#         46
+  C:0815H         LINE#         47
+  C:0817H         LINE#         48
+  C:0819H         LINE#         50
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/09/2023  14:28:38  PAGE 3
+
+
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LAB8_2
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003BH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=74
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

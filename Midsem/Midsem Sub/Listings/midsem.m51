@@ -1,0 +1,120 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/12/2023  13:23:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\mid.obj TO .\Objects\midsem PRINT (.\Listings\midsem.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\mid.obj (MID)
+
+
+LINK MAP OF MODULE:  .\Objects\midsem (MID)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0196H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\midsem (MID)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MID
+  D:00F0H         SYMBOL        B
+  C:0180H         SYMBOL        DELAY_1S
+  C:016CH         SYMBOL        DELAY_250US
+  C:0175H         SYMBOL        DELAY_50MS
+  C:018BH         SYMBOL        DELAY_5S
+  C:0130H         SYMBOL        ENCRYPT
+  C:0170H         SYMBOL        H1
+  C:0179H         SYMBOL        H2
+  C:0184H         SYMBOL        H3
+  C:018FH         SYMBOL        H4
+  C:0108H         SYMBOL        HERE
+  C:0146H         SYMBOL        LAST
+  C:0135H         SYMBOL        LOOP
+  C:0100H         SYMBOL        MAIN
+  C:0148H         SYMBOL        OUTPUT
+  D:0090H         SYMBOL        P1
+  C:0138H         SYMBOL        SUBT
+  C:0000H         LINE#         2
+  C:0100H         LINE#         6
+  C:0103H         LINE#         7
+  C:0106H         LINE#         8
+  C:0108H         LINE#         9
+  C:0130H         LINE#         15
+  C:0132H         LINE#         17
+  C:0134H         LINE#         18
+  C:0135H         LINE#         22
+  C:0136H         LINE#         23
+  C:0138H         LINE#         28
+  C:0139H         LINE#         30
+  C:013AH         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/12/2023  13:23:08  PAGE 2
+
+
+  C:013BH         LINE#         32
+  C:013DH         LINE#         33
+  C:013FH         LINE#         36
+  C:0141H         LINE#         38
+  C:0142H         LINE#         39
+  C:0143H         LINE#         41
+  C:0146H         LINE#         44
+  C:0148H         LINE#         48
+  C:014AH         LINE#         49
+  C:014CH         LINE#         52
+  C:014DH         LINE#         53
+  C:014FH         LINE#         54
+  C:0151H         LINE#         58
+  C:0153H         LINE#         59
+  C:0155H         LINE#         62
+  C:0158H         LINE#         63
+  C:015AH         LINE#         66
+  C:015CH         LINE#         67
+  C:015FH         LINE#         68
+  C:0160H         LINE#         69
+  C:0162H         LINE#         70
+  C:0164H         LINE#         73
+  C:0167H         LINE#         74
+  C:0169H         LINE#         76
+  C:016BH         LINE#         78
+  C:016CH         LINE#         81
+  C:016EH         LINE#         82
+  C:0170H         LINE#         83
+  C:0172H         LINE#         84
+  C:0174H         LINE#         85
+  C:0175H         LINE#         88
+  C:0177H         LINE#         89
+  C:0179H         LINE#         90
+  C:017BH         LINE#         91
+  C:017DH         LINE#         92
+  C:017FH         LINE#         93
+  C:0180H         LINE#         96
+  C:0182H         LINE#         97
+  C:0184H         LINE#         98
+  C:0186H         LINE#         99
+  C:0188H         LINE#         100
+  C:018AH         LINE#         101
+  C:018BH         LINE#         104
+  C:018DH         LINE#         105
+  C:018FH         LINE#         106
+  C:0191H         LINE#         107
+  C:0193H         LINE#         108
+  C:0195H         LINE#         109
+  -------         ENDMOD        MID
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0073H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=406
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

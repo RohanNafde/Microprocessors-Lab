@@ -1,0 +1,135 @@
+A51 MACRO ASSEMBLER  BINSEARCH                                                            02/12/2023 02:24:10 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\BinSearch.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE BinSearch.asm SET(SMALL) DEBUG PRINT(.\Listings\BinSearch.lst) OBJECT(.
+                      \Objects\BinSearch.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+                       4             
+0100                   5     MAIN:
+0100 3130              6     CALL BIN
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+                       9             
+0130                  10     BIN:
+                      11     
+                      12     
+0130 7E60             13     MOV R6, #60H  
+0132 7F67             14     MOV R7, #67H  
+                      15     
+0134                  16     LOOP:
+                      17     
+0134                  18     MID:
+                      19     
+                      20     
+                      21     
+0134 C3               22     CLR C
+0135 E506             23     MOV A, 06
+0137 75F002           24     MOV B, #02
+013A 84               25     DIV AB
+013B F503             26     MOV 03, A
+013D 85F004           27     MOV 04, B
+                      28     
+0140 C3               29     CLR C
+0141 E507             30     MOV A, 07
+0143 75F002           31     MOV B, #02
+0146 84               32     DIV AB
+                      33     
+                      34     
+0147 C3               35     CLR C
+0148 F505             36     MOV 05, A
+                      37     
+014A E5F0             38     MOV A, B
+014C 2504             39     ADD A, 04
+014E C3               40     CLR C
+014F 75F002           41     MOV B, #02
+0152 C3               42     CLR C
+0153 84               43     DIV AB
+0154 C3               44     CLR C
+0155 2503             45     ADD A, 03
+0157 C3               46     CLR C
+0158 2505             47     ADD A, 05
+015A F8               48     MOV R0, A
+                      49     
+015B                  50     COMPARE:
+                      51     
+015B E6               52     MOV A, @R0
+015C B55004           53     CJNE A, 50H, NOTEQ  
+                      54     
+015F                  55     EQUAL:
+015F 8890             56     MOV 90H, R0  
+0161 217C             57     AJMP TERMINATE
+A51 MACRO ASSEMBLER  BINSEARCH                                                            02/12/2023 02:24:10 PAGE     2
+
+                      58     
+0163                  59     NOTEQ:
+0163 4002             60     JC GREATER
+0165 5007             61     JNC LESS
+                      62     
+0167                  63     GREATER:
+                      64     
+0167 C3               65     CLR C
+0168 E8               66     MOV A, R0
+0169 2401             67     ADD A, #01
+016B FE               68     MOV R6, A
+016C 2175             69     AJMP CHECKLOOP
+                      70     
+016E                  71     LESS:
+                      72     
+016E C3               73     CLR C
+016F E8               74     MOV A, R0
+0170 9401             75     SUBB A, #01
+0172 FF               76     MOV R7, A
+                      77     
+0173 2175             78     AJMP CHECKLOOP
+                      79     
+0175                  80     CHECKLOOP:
+                      81     
+0175 E506             82     MOV A, 06
+0177 9401             83     SUBB A, #01
+0179 B507B8           84     CJNE A, 07, LOOP
+                      85     
+017C                  86     TERMINATE:
+017C E590             87     MOV A, 90H
+017E B40003           88     CJNE A, #00, LAST
+0181 7590FF           89     MOV 90H, #0FFH
+                      90     
+0184                  91     LAST:
+                      92     
+0184 22               93     RET
+                      94     
+                      95     END
+A51 MACRO ASSEMBLER  BINSEARCH                                                            02/12/2023 02:24:10 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+BIN. . . . . . . .  C ADDR   0130H   A   
+CHECKLOOP. . . . .  C ADDR   0175H   A   
+COMPARE. . . . . .  C ADDR   015BH   A   
+EQUAL. . . . . . .  C ADDR   015FH   A   
+GREATER. . . . . .  C ADDR   0167H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+LAST . . . . . . .  C ADDR   0184H   A   
+LESS . . . . . . .  C ADDR   016EH   A   
+LOOP . . . . . . .  C ADDR   0134H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+MID. . . . . . . .  C ADDR   0134H   A   
+NOTEQ. . . . . . .  C ADDR   0163H   A   
+TERMINATE. . . . .  C ADDR   017CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

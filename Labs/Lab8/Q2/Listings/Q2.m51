@@ -1,0 +1,129 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    03/12/2023  15:35:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Q2.obj TO .\Objects\Q2 PRINT (.\Listings\Q2.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Q2.obj (Q2)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\Q2 (Q2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+                    000EH     000DH                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+                    001EH     07E2H                  *** GAP ***
+            CODE    0800H     001BH     UNIT         ?PR?MAIN?Q2
+            CODE    081BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0827H     000BH     UNIT         ?PR?TIMER0_ISR?Q2
+            CODE    0832H     000BH     UNIT         ?PR?TIMER1_ISR?Q2
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Q2 (Q2)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?Q2
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Q2 (Q2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        Q2
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/12/2023  15:35:52  PAGE 2
+
+
+  D:00C0H         PUBLIC        P4
+  C:0827H         PUBLIC        timer0_isr
+  C:0832H         PUBLIC        timer1_isr
+  B:00A8H.7       PUBLIC        EA
+  B:00B0H.6       PUBLIC        LED1
+  B:00B0H.7       PUBLIC        LED2
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IPL0
+  D:00D8H         PUBLIC        CCON
+  C:0800H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:008BH         PUBLIC        TL1
+  B:0088H.4       PUBLIC        TR0
+  D:00F8H         PUBLIC        UEPINT
+  B:0088H.6       PUBLIC        TR1
+  D:00C8H         PUBLIC        T2CON
+  -------         PROC          TIMER0_ISR
+  C:0827H         LINE#         16
+  C:0827H         LINE#         18
+  C:0829H         LINE#         20
+  C:082CH         LINE#         21
+  C:082FH         LINE#         22
+  C:0831H         LINE#         23
+  -------         ENDPROC       TIMER0_ISR
+  -------         PROC          TIMER1_ISR
+  C:0832H         LINE#         25
+  C:0832H         LINE#         27
+  C:0834H         LINE#         29
+  C:0837H         LINE#         30
+  C:083AH         LINE#         31
+  C:083CH         LINE#         32
+  -------         ENDPROC       TIMER1_ISR
+  -------         PROC          MAIN
+  C:0800H         LINE#         35
+  C:0800H         LINE#         36
+  C:0800H         LINE#         37
+  C:0803H         LINE#         38
+  C:0806H         LINE#         39
+  C:0809H         LINE#         40
+  C:080CH         LINE#         41
+  C:080FH         LINE#         42
+  C:0811H         LINE#         43
+  C:0813H         LINE#         44
+  C:0815H         LINE#         45
+  C:0817H         LINE#         46
+  C:0819H         LINE#         48
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        Q2
+
+******************************************************************************
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  03/12/2023  15:35:52  PAGE 3
+
+
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0037H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=70
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

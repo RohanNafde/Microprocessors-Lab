@@ -1,0 +1,74 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              04/10/2023 04:11:18 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <at89c5131.h>
+   2          #include "lcd.h"
+   3          
+   4          unsigned long int i, ans1, t, time, a1, a0, b1, b0, c0, c1, c2, c3, c, a = 29851, b = 11237;
+   5          char msg1[16], msg2[16];
+   6          
+   7          void main()
+   8          { 
+   9   1        //initialise LED
+  10   1        lcd_init();
+  11   1        
+  12   1        msg1[0] = 'P';
+  13   1        msg1[1] = 'r';
+  14   1        msg1[2] = 'o';
+  15   1        msg1[3] = 'd';
+  16   1        msg1[4] = '1';
+  17   1        msg1[5] = '=';
+  18   1      
+  19   1        msg2[0] = 't';
+  20   1        msg2[1] = 'i';
+  21   1        msg2[2] = 'm';
+  22   1        msg2[3] = 'e';
+  23   1        msg2[4] = '1';
+  24   1        msg2[5] = '=';
+  25   1        
+  26   1        TMOD = 0x10;
+  27   1        TL1 = 0x00; //Starting Count value
+  28   1        TH1 = 0x00;
+  29   1        TR1 = 1; //Start bit indicates the counting starts
+  30   1        
+  31   1        a1 = a/10;
+  32   1        a0 = a%10;
+  33   1        b1 = b/10;
+  34   1        b0 = b%10;
+  35   1        c0 = a0*b0;
+  36   1        c1 = a0*b1;
+  37   1        c2 = a1*b0;
+  38   1        c3 = a1*b1;
+  39   1        c = c0 + (c1 + c2)*10 + c3*100;
+  40   1        
+  41   1        TR1 = 0; //Stops the timer
+  42   1        TF1 = 0;
+  43   1        
+  44   1        t = TH1*256 + TL1;
+  45   1        time = t/2;
+  46   1        
+  47   1        int_to_string1(c, msg1);
+  48   1        int_to_string2(time, msg2);
+  49   1        msg2[11] = 'u';
+  50   1        msg2[12] = 's';
+  51   1        
+  52   1        R0 = time%256;
+*** ERROR C202 IN LINE 52 OF main.c: 'R0': undefined identifier
+  53   1        R1 = time/256;
+C51 COMPILER V9.60.7.0   MAIN                                                              04/10/2023 04:11:18 PAGE 2   
+
+*** ERROR C202 IN LINE 53 OF main.c: 'R1': undefined identifier
+  54   1        
+  55   1        display(msg1, msg2);
+  56   1        
+  57   1        while(1);
+  58   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)

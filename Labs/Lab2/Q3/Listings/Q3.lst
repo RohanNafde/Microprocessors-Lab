@@ -1,0 +1,105 @@
+A51 MACRO ASSEMBLER  Q3                                                                   01/16/2023 15:07:10 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Q3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Q3.asm SET(SMALL) DEBUG PRINT(.\Listings\Q3.lst) OBJECT(.\Objects\Q3.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+                       4             
+0100                   5     MAIN:
+0100 3130              6     CALL SORT
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+                       9             
+0130                  10     SORT:
+                      11     
+0130 7900             12     MOV R1, #00H
+                      13     
+                      14     
+0132                  15     OUTERLOOP:
+                      16     
+0132 7860             17     MOV R0, #60H
+                      18     
+0134 09               19     INC R1
+0135 B90819           20     CJNE R1, #08H, INNERLOOP
+                      21     
+                      22     
+0138 856070           23     MOV 70H, 60H
+013B 856171           24     MOV 71H, 61H
+013E 856272           25     MOV 72H, 62H
+0141 856373           26     MOV 73H, 63H
+0144 856474           27     MOV 74H, 64H
+0147 856575           28     MOV 75H, 65H
+014A 856676           29     MOV 76H, 66H
+014D 856777           30     MOV 77H, 67H
+                      31     
+0150 22               32     RET
+                      33     
+                      34     
+0151                  35     INNERLOOP:
+                      36     
+0151 E6               37     MOV A, @R0
+0152 08               38     INC R0
+                      39     
+0153 C3               40     CLR C
+                      41     
+0154 96               42     SUBB A, @R0  
+0155 500B             43     JNC SWP
+                      44     
+                      45     
+0157                  46     OLCHECK:
+                      47     
+0157 C3               48     CLR C
+                      49     
+0158 7468             50     MOV A, #68H
+015A 99               51     SUBB A, R1
+                      52     
+                      53     
+015B 8840             54     MOV 40H, R0
+015D B540F1           55     CJNE A, 40H, INNERLOOP
+                      56     
+                      57     
+A51 MACRO ASSEMBLER  Q3                                                                   01/16/2023 15:07:10 PAGE     2
+
+0160 2132             58     AJMP OUTERLOOP
+                      59     
+0162                  60     SWP:
+                      61     
+0162 8606             62     MOV 06H, @R0
+0164 18               63     DEC R0
+0165 8607             64     MOV 07H, @R0
+0167 A606             65     MOV @R0, 06H
+0169 08               66     INC R0
+016A A607             67     MOV @R0, 07H
+                      68     
+                      69     
+016C 2157             70     AJMP OLCHECK
+                      71     
+                      72     END
+A51 MACRO ASSEMBLER  Q3                                                                   01/16/2023 15:07:10 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   0102H   A   
+INNERLOOP. . . . .  C ADDR   0151H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+OLCHECK. . . . . .  C ADDR   0157H   A   
+OUTERLOOP. . . . .  C ADDR   0132H   A   
+SORT . . . . . . .  C ADDR   0130H   A   
+SWP. . . . . . . .  C ADDR   0162H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

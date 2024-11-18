@@ -1,0 +1,3 @@
+".\Objects\BinSearch.obj" 
+TO ".\Objects\BinSearch" 
+PRINT(".\Listings\BinSearch.m51") RAMSIZE(256) 

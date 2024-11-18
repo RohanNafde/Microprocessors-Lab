@@ -1,0 +1,3 @@
+".\Objects\main.obj" 
+TO ".\Objects\pyq" 
+PRINT(".\Listings\pyq.m51") RAMSIZE(256) 

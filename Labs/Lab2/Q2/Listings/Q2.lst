@@ -1,0 +1,64 @@
+A51 MACRO ASSEMBLER  Q2                                                                   01/15/2023 20:53:53 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Q2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Q2.asm SET(SMALL) DEBUG PRINT(.\Listings\Q2.lst) OBJECT(.\Objects\Q2.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+                       4     
+0100                   5     MAIN:
+0100 3130              6     CALL DET
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+                       9     
+0130                  10     DET:
+                      11     
+0130 E561             12     MOV A, 61H
+0132 8562F0           13     MOV B, 62H
+0135 A4               14     MUL AB
+                      15     
+                      16     
+0136 F9               17     MOV R1, A
+0137 AAF0             18     MOV R2, B
+                      19     
+                      20     
+0139 E560             21     MOV A, 60H
+013B 8563F0           22     MOV B, 63H
+013E A4               23     MUL AB
+                      24     
+                      25     
+013F 99               26     SUBB A, R1
+0140 F571             27     MOV 71H, A
+                      28     
+                      29     
+0142 E5F0             30     MOV A, B
+0144 9A               31     SUBB A, R2
+0145 F570             32     MOV 70H, A
+                      33     
+0147 22               34     RET
+                      35     
+                      36     END
+A51 MACRO ASSEMBLER  Q2                                                                   01/15/2023 20:53:53 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DET. . . . . . . .  C ADDR   0130H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

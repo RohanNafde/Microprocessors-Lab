@@ -1,0 +1,77 @@
+A51 MACRO ASSEMBLER  TEMP                                                                 01/16/2023 09:55:09 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\temp.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE temp.asm SET(SMALL) DEBUG PRINT(.\Listings\temp.lst) OBJECT(.\Objects\t
+                      emp.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+0100                   4     MAIN:
+0100 3130              5     CALL SORT
+0102 80FE              6     HERE: SJMP HERE
+0130                   7     ORG 130H
+0130                   8     SORT:
+0130 7870              9     MOV R0,#70H
+0132 7960             10     MOV R1,#60H
+0134                  11     STORE:
+0134 E7               12     MOV A,@R1
+0135 F6               13     MOV @R0,A
+0136 08               14     INC R0
+0137 09               15     INC R1
+0138 B878F9           16     CJNE R0,#78H,STORE
+013B 7900             17     MOV R1,#00H
+013D                  18     OUTLOOP:
+013D 7870             19     MOV R0,#70H
+013F 09               20     INC R1
+0140 B90801           21     CJNE R1,#08H,INLOOP
+0143 22               22     RET
+0144                  23     INLOOP:
+0144 E6               24     MOV A,@R0
+0145 08               25     INC R0
+0146 C3               26     CLR C
+0147 96               27     SUBB A,@R0
+0148 500C             28     JNC SWAPPING
+014A                  29     GOINGBACK:
+014A 7478             30     MOV A,#78H
+014C C3               31     CLR C
+014D 99               32     SUBB A,R1
+014E 8869             33     MOV 69H,R0
+0150 B569F1           34     CJNE A,69H,INLOOP
+0153 02013D           35     LJMP OUTLOOP
+0156                  36     SWAPPING:
+0156 8606             37     MOV 06H,@R0
+0158 18               38     DEC R0
+0159 8607             39     MOV 07H,@R0
+015B A606             40     MOV @R0,06H
+015D 08               41     INC R0
+015E A607             42     MOV @R0,07H
+0160 C3               43     CLR C
+0161 50DA             44     JNC OUTLOOP
+                      45     END
+A51 MACRO ASSEMBLER  TEMP                                                                 01/16/2023 09:55:09 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+GOINGBACK. . . . .  C ADDR   014AH   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+INLOOP . . . . . .  C ADDR   0144H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+OUTLOOP. . . . . .  C ADDR   013DH   A   
+SORT . . . . . . .  C ADDR   0130H   A   
+STORE. . . . . . .  C ADDR   0134H   A   
+SWAPPING . . . . .  C ADDR   0156H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

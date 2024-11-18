@@ -1,0 +1,79 @@
+A51 MACRO ASSEMBLER  Q2                                                                   01/22/2023 01:16:51 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Q2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Q2.asm SET(SMALL) DEBUG PRINT(.\Listings\Q2.lst) OBJECT(.\Objects\Q2.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+                       4     
+0100                   5     MAIN:
+0100 3130              6     CALL FILT
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+                       9     
+0130                  10     FILT:
+                      11     
+0130 7860             12     MOV R0, #60H
+0132 7970             13     MOV R1, #70H
+                      14     
+                      15     
+0134                  16     LOOP:
+                      17     
+                      18     
+0134 C3               19     CLR C
+                      20     
+                      21     
+                      22     
+0135 E6               23     MOV A, @R0
+0136 18               24     DEC R0
+0137 26               25     ADD A, @R0
+0138 18               26     DEC R0
+0139 26               27     ADD A, @R0
+013A 18               28     DEC R0
+013B 26               29     ADD A, @R0
+                      30     
+                      31     
+013C 08               32     INC R0
+013D 08               33     INC R0
+013E 08               34     INC R0
+                      35     
+                      36     
+013F 75F004           37     MOV B, #04H
+0142 84               38     DIV AB
+0143 F7               39     MOV @R1, A
+                      40     
+0144                  41     LCHECK:
+                      42     
+0144 08               43     INC R0
+0145 09               44     INC R1
+0146 B868EB           45     CJNE R0, #68H, LOOP
+                      46     
+0149 22               47     RET
+                      48     
+                      49     END
+A51 MACRO ASSEMBLER  Q2                                                                   01/22/2023 01:16:51 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+FILT . . . . . . .  C ADDR   0130H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+LCHECK . . . . . .  C ADDR   0144H   A   
+LOOP . . . . . . .  C ADDR   0134H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

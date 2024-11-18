@@ -1,0 +1,188 @@
+A51 MACRO ASSEMBLER  LAB5                                                                 02/06/2023 15:04:30 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\lab5.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab5.asm SET(SMALL) DEBUG PRINT(.\Listings\lab5.lst) OBJECT(.\Objects\l
+                      ab5.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+                       4             
+0100                   5     MAIN:
+                       6     
+                       7     
+0100 C297              8     CLR P1.7
+0102 C296              9     CLR P1.6
+0104 C295             10     CLR P1.5
+0106 C294             11     CLR P1.4
+                      12     
+0108 3130             13     CALL OUTPUT
+010A 80FE             14     HERE: SJMP HERE
+0130                  15     ORG 130H
+                      16     
+0130                  17     OUTPUT:
+                      18     
+                      19     
+0130 D290             20     SETB P1.0
+0132 D291             21     SETB P1.1
+0134 D292             22     SETB P1.2
+0136 D293             23     SETB P1.3
+                      24     
+                      25     
+0138 E590             26     MOV A, P1
+                      27     
+                      28     
+013A B40114           29     CJNE A, #01H, REX
+                      30     
+                      31     
+013D                  32     SA:
+                      33     
+                      34     
+013D 7850             35     MOV R0, #80
+013F 758080           36     MOV P0, #80H
+0142                  37     L1:
+0142 319D             38     ACALL DELAY_25us
+0144 D8FC             39     DJNZ R0, L1
+                      40     
+                      41     
+0146 7850             42     MOV R0, #80
+0148 758000           43     MOV P0, #00H
+014B                  44     L2:
+014B 319D             45     ACALL DELAY_25us
+014D D8FC             46     DJNZ R0, L2
+                      47     
+                      48     
+014F 219A             49     AJMP END_FXN
+                      50     
+0151                  51     REX:
+                      52     
+0151 B40316           53     CJNE A, #03H, GAX
+                      54     
+0154                  55     RE:
+                      56     
+                      57     
+A51 MACRO ASSEMBLER  LAB5                                                                 02/06/2023 15:04:30 PAGE     2
+
+0154 7846             58     MOV R0, #70
+0156 758080           59     MOV P0, #80H
+0159                  60     L3:
+0159 319D             61     ACALL DELAY_25us
+015B D8FC             62     DJNZ R0, L3
+                      63     
+                      64     
+015D 7846             65     MOV R0, #70
+015F 758000           66     MOV P0, #00H
+0162                  67     L4:
+0162 319D             68     ACALL DELAY_25us
+0164 D8FC             69     DJNZ R0, L4
+                      70     
+                      71     
+0166 219A             72     AJMP END_FXN
+                      73     
+0168 219A             74     AJMP END_FXN
+                      75     
+016A                  76     GAX:
+                      77     
+016A B40716           78     CJNE A, #07H, MAX
+                      79     
+016D                  80     GA:
+                      81     
+                      82     
+016D 783E             83     MOV R0, #62
+016F 758080           84     MOV P0, #80H
+0172                  85     L5:
+0172 319D             86     ACALL DELAY_25us
+0174 D8FC             87     DJNZ R0, L5
+                      88     
+                      89     
+0176 783E             90     MOV R0, #62
+0178 758000           91     MOV P0, #00H
+017B                  92     L6:
+017B 319D             93     ACALL DELAY_25us
+017D D8FC             94     DJNZ R0, L6
+                      95     
+                      96     
+017F 219A             97     AJMP END_FXN
+                      98     
+0181 219A             99     AJMP END_FXN
+                     100     
+0183                 101     MAX:
+                     102     
+0183 B40F14          103     CJNE A, #0FH, END_FXN
+                     104     
+0186                 105     MA:
+                     106     
+                     107     
+0186 783B            108     MOV R0, #59
+0188 758080          109     MOV P0, #80H
+018B                 110     L7:
+018B 319D            111     ACALL DELAY_25us
+018D D8FC            112     DJNZ R0, L7
+                     113     
+                     114     
+018F 783B            115     MOV R0, #59
+0191 758000          116     MOV P0, #00H
+0194                 117     L8:
+0194 319D            118     ACALL DELAY_25us
+0196 D8FC            119     DJNZ R0, L8
+                     120     
+                     121     
+0198 219A            122     AJMP END_FXN
+                     123     
+A51 MACRO ASSEMBLER  LAB5                                                                 02/06/2023 15:04:30 PAGE     3
+
+019A                 124     END_FXN:
+                     125     
+019A 2130            126     AJMP OUTPUT
+                     127     
+019C 22              128     RET
+                     129     
+019D                 130     DELAY_25us:
+019D C000            131     push 00h
+019F 7813            132     mov r0, #19
+01A1 D8FE            133     h1: djnz r0, h1
+01A3 D000            134     pop 00h
+01A5 22              135     ret
+                     136     
+                     137     END
+A51 MACRO ASSEMBLER  LAB5                                                                 02/06/2023 15:04:30 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY_25US . . . .  C ADDR   019DH   A   
+END_FXN. . . . . .  C ADDR   019AH   A   
+GA . . . . . . . .  C ADDR   016DH   A   
+GAX. . . . . . . .  C ADDR   016AH   A   
+H1 . . . . . . . .  C ADDR   01A1H   A   
+HERE . . . . . . .  C ADDR   010AH   A   
+L1 . . . . . . . .  C ADDR   0142H   A   
+L2 . . . . . . . .  C ADDR   014BH   A   
+L3 . . . . . . . .  C ADDR   0159H   A   
+L4 . . . . . . . .  C ADDR   0162H   A   
+L5 . . . . . . . .  C ADDR   0172H   A   
+L6 . . . . . . . .  C ADDR   017BH   A   
+L7 . . . . . . . .  C ADDR   018BH   A   
+L8 . . . . . . . .  C ADDR   0194H   A   
+MA . . . . . . . .  C ADDR   0186H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+MAX. . . . . . . .  C ADDR   0183H   A   
+OUTPUT . . . . . .  C ADDR   0130H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+RE . . . . . . . .  C ADDR   0154H   A   
+REX. . . . . . . .  C ADDR   0151H   A   
+SA . . . . . . . .  C ADDR   013DH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

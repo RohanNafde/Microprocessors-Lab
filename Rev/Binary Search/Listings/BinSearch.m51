@@ -1,0 +1,108 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/12/2023  02:24:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\BinSearch.obj TO .\Objects\BinSearch PRINT (.\Listings\BinSearch.m51) RAMSIZE (256
+>> )
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\BinSearch.obj (BINSEARCH)
+
+
+LINK MAP OF MODULE:  .\Objects\BinSearch (BINSEARCH)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0185H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\BinSearch (BINSEARCH)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BINSEARCH
+  D:00F0H         SYMBOL        B
+  C:0130H         SYMBOL        BIN
+  C:0175H         SYMBOL        CHECKLOOP
+  C:015BH         SYMBOL        COMPARE
+  C:015FH         SYMBOL        EQUAL
+  C:0167H         SYMBOL        GREATER
+  C:0102H         SYMBOL        HERE
+  C:0184H         SYMBOL        LAST
+  C:016EH         SYMBOL        LESS
+  C:0134H         SYMBOL        LOOP
+  C:0100H         SYMBOL        MAIN
+  C:0134H         SYMBOL        MID
+  C:0163H         SYMBOL        NOTEQ
+  C:017CH         SYMBOL        TERMINATE
+  C:0000H         LINE#         2
+  C:0100H         LINE#         6
+  C:0102H         LINE#         7
+  C:0130H         LINE#         13
+  C:0132H         LINE#         14
+  C:0134H         LINE#         22
+  C:0135H         LINE#         23
+  C:0137H         LINE#         24
+  C:013AH         LINE#         25
+  C:013BH         LINE#         26
+  C:013DH         LINE#         27
+  C:0140H         LINE#         29
+  C:0141H         LINE#         30
+  C:0143H         LINE#         31
+  C:0146H         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/12/2023  02:24:11  PAGE 2
+
+
+  C:0147H         LINE#         35
+  C:0148H         LINE#         36
+  C:014AH         LINE#         38
+  C:014CH         LINE#         39
+  C:014EH         LINE#         40
+  C:014FH         LINE#         41
+  C:0152H         LINE#         42
+  C:0153H         LINE#         43
+  C:0154H         LINE#         44
+  C:0155H         LINE#         45
+  C:0157H         LINE#         46
+  C:0158H         LINE#         47
+  C:015AH         LINE#         48
+  C:015BH         LINE#         52
+  C:015CH         LINE#         53
+  C:015FH         LINE#         56
+  C:0161H         LINE#         57
+  C:0163H         LINE#         60
+  C:0165H         LINE#         61
+  C:0167H         LINE#         65
+  C:0168H         LINE#         66
+  C:0169H         LINE#         67
+  C:016BH         LINE#         68
+  C:016CH         LINE#         69
+  C:016EH         LINE#         73
+  C:016FH         LINE#         74
+  C:0170H         LINE#         75
+  C:0172H         LINE#         76
+  C:0173H         LINE#         78
+  C:0175H         LINE#         82
+  C:0177H         LINE#         83
+  C:0179H         LINE#         84
+  C:017CH         LINE#         87
+  C:017EH         LINE#         88
+  C:0181H         LINE#         89
+  C:0184H         LINE#         93
+  -------         ENDMOD        BINSEARCH
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 005CH BYTE ( 4%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=389
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

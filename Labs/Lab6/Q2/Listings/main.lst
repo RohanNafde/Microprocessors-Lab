@@ -1,0 +1,115 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              02/27/2023 01:20:36 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <at89c5131.h>
+   2          #include "lcd.h"
+   3          #include "functions.h"
+   4          
+   5          int i, x, a[5], ind;
+   6          
+   7          void display(char str1[], char str2[]);
+   8          
+   9          void display(char str1[], char str2[])
+  10          {
+  11   1        lcd_cmd(0x01);                          //clear previous display
+  12   1        lcd_cmd(0x80);                          //Move cursor to first line
+  13   1        msdelay(4);
+  14   1        lcd_write_string(str1);
+  15   1        lcd_cmd(0xC0);                          //Move cursor to 2nd line of LCD
+  16   1        msdelay(4);
+  17   1        lcd_write_string(str2);
+  18   1      }
+  19          
+  20          void main()
+  21          {
+  22   1        //initialise LED
+  23   1        lcd_init();
+  24   1        
+  25   1        //program start
+  26   1        display("START PROGRAM", "");
+  27   1        msdelay(5000);
+  28   1        
+  29   1        //first input
+  30   1        P1 = 15;
+  31   1        display("FIRST INPUT", "");
+  32   1        msdelay(5000);
+  33   1        a[0] = P1;
+  34   1        
+  35   1        //rest inputs
+  36   1        for(i=1; i<5; i++)
+  37   1        {
+  38   2          //display previous input
+  39   2          P1 = a[i-1] * 16;
+  40   2          display("NEXT INPUT", "");
+  41   2          msdelay(5000);
+  42   2          //clear LEDs
+  43   2          P1 = 15;
+  44   2          msdelay(1000);
+  45   2          a[i] = P1;
+  46   2        }
+  47   1        P1 = a[4] * 16;
+  48   1        
+  49   1        //sorting message and sort
+  50   1        display("SORTING", "");
+  51   1        msdelay(5000);
+  52   1        
+  53   1        //clear LEDs and sort
+  54   1        P1 = 0;
+C51 COMPILER V9.60.7.0   MAIN                                                              02/27/2023 01:20:36 PAGE 2   
+
+  55   1        msdelay(1000);
+  56   1        display("SORTING", "COMPLETED");
+  57   1        bubbleSort(a);
+  58   1        
+  59   1        //display sorted numbers
+  60   1        for(i=0; i<5; i++)
+  61   1        {
+  62   2          P1 = a[i] * 16;
+  63   2          msdelay(5000);
+  64   2          P1 = 0;
+  65   2          msdelay(1000);
+  66   2        }
+  67   1        
+  68   1        //input number to be searched, turning all LEDs on
+  69   1        P1 = 255;
+  70   1        display("NUMBER TO BE", "SEARCHED");
+  71   1        msdelay(5000);
+  72   1        x = P1-240;
+  73   1        display("", "");
+  74   1        P1 = 0;
+  75   1        msdelay(1000);
+  76   1        
+  77   1        //search number
+  78   1        ind = search(a, x);
+  79   1        //index not found
+  80   1        if(ind == -1)
+  81   1          display("NUMBER", "NOT FOUND");
+  82   1        //index found
+  83   1        else
+  84   1        {
+  85   2          display("THE INDEX IS", "");
+  86   2          P1 = (ind + 1) * 16;
+  87   2        }
+  88   1        while(1);
+  89   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    869    ----
+   CONSTANT SIZE    =    108    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     20      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

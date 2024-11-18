@@ -1,0 +1,99 @@
+A51 MACRO ASSEMBLER  Q1                                                                   01/22/2023 00:42:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Q1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Q1.asm SET(SMALL) DEBUG PRINT(.\Listings\Q1.lst) OBJECT(.\Objects\Q1.ob
+                      j) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+                       4     
+0100                   5     MAIN:
+0100 3130              6     CALL QUANT
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+                       9     
+0130                  10     QUANT:
+                      11     
+                      12     
+0130 7860             13     MOV R0, #60H
+0132 7970             14     MOV R1, #70H
+                      15     
+0134                  16     LOOP:
+                      17     
+                      18     
+0134 C3               19     CLR C
+                      20     
+0135 7409             21     MOV A, #09H
+0137 96               22     SUBB A, @R0
+                      23     
+0138 500F             24     JNC L1
+                      25     
+013A C3               26     CLR C
+013B 7413             27     MOV A, #13H
+013D 96               28     SUBB A, @R0
+013E 500D             29     JNC L2
+                      30     
+0140 C3               31     CLR C
+0141 741D             32     MOV A, #1DH
+0143 96               33     SUBB A, @R0
+0144 500B             34     JNC L3
+                      35     
+0146 400D             36     JC L4
+0148 C3               37     CLR C
+                      38     
+0149                  39     L1:
+                      40     
+0149 7705             41     MOV @R1, #05H
+014B 2159             42     AJMP LCHECK
+                      43     
+014D                  44     L2:
+014D 770F             45     MOV @R1, #0FH
+014F 2159             46     AJMP LCHECK
+                      47     
+0151                  48     L3:
+0151 7719             49     MOV @R1, #19H
+0153 2159             50     AJMP LCHECK
+                      51     
+0155                  52     L4:
+0155 7723             53     MOV @R1, #23H
+0157 2159             54     AJMP LCHECK
+                      55     
+0159                  56     LCHECK:
+                      57     
+A51 MACRO ASSEMBLER  Q1                                                                   01/22/2023 00:42:29 PAGE     2
+
+0159 08               58     INC R0
+015A 09               59     INC R1
+015B B868D6           60     CJNE R0, #68H, LOOP
+                      61     
+015E 22               62     RET
+                      63     
+                      64     END
+A51 MACRO ASSEMBLER  Q1                                                                   01/22/2023 00:42:29 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   0102H   A   
+L1 . . . . . . . .  C ADDR   0149H   A   
+L2 . . . . . . . .  C ADDR   014DH   A   
+L3 . . . . . . . .  C ADDR   0151H   A   
+L4 . . . . . . . .  C ADDR   0155H   A   
+LCHECK . . . . . .  C ADDR   0159H   A   
+LOOP . . . . . . .  C ADDR   0134H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+QUANT. . . . . . .  C ADDR   0130H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
